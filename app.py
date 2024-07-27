@@ -2,6 +2,7 @@ import requests
 from flask import Flask, request, render_template, jsonify
 from dotenv import load_dotenv
 import os
+from currencies import currencies
 
 load_dotenv()
 
@@ -12,7 +13,7 @@ BASE_URL = 'http://data.fixer.io/api/'
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', currencies = currencies)
 
 @app.route('/convert', methods=['POST'])
 def conversion():
