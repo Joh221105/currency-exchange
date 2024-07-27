@@ -13,7 +13,7 @@ API_KEY = os.getenv('access_key')
 
 @app.route('/')
 def home():
-    render_template('index.html')
+    return render_template('index.html')
 
 @app.route('/convert', methods=['POST'])
 def conversion():
