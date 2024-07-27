@@ -29,7 +29,7 @@ def conversion():
     rate = data['rates'][target]
     converted_amount = amount * rate
 
-    return render_template('results.html', base=base, target=target, amount=amount, rate=rate, converted_amount=converted_amount)
+    return render_template('results.html', base=base, target=target, amount=amount, rate=round(rate,2), converted_amount=round(converted_amount,2))
 
 if __name__ == '__main__':
     app.run(debug=True)
