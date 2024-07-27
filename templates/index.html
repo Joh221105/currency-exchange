@@ -8,10 +8,20 @@
     <h1>Currency Converter</h1>
     <form action="/convert" method="post">
         <label for="base">Base Currency:</label>
-        <input type="text" id="base" name="base" required><br><br>
+        <select id="base" name="base" required>
+            <option value="">Base Currency</option>
+            {% for code, name in currencies.items() %}
+                <option value="{{ code }}">{{ code }} : {{ name }}</option>
+            {% endfor %}
+        </select><br><br>
 
         <label for="target">Target Currency:</label>
-        <input type="text" id="target" name="target" required><br><br>
+        <select id="target" name="target" required>
+            <option value="">Select Target Currency</option>
+            {% for code, name in currencies.items() %}
+                <option value="{{ code }}">{{ code }} : {{ name }}</option>
+            {% endfor %}
+        </select><br><br>
 
         <label for="amount">Amount:</label>
         <input type="number" id="amount" name="amount" required><br><br>
